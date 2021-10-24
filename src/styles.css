@@ -34,3 +34,25 @@ button {
 button:disabled {
     opacity: .5;
 }
+
+
+/* CHROME */
+
+::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-1);
+    border: none;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-3);
+    border: none;
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
+}
