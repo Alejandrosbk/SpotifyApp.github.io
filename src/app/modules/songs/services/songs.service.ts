@@ -35,7 +35,7 @@ export class SongsService {
       catchError((err) => {
         setTimeout(() => {
           this.toastr.error(err.status, err.name);
-        }, 2000);
+        }, 1000);
         return of([])
       })
     );
@@ -50,7 +50,7 @@ export class SongsService {
       catchError((err) => {
         setTimeout(() => {
           this.toastr.error('Algo salio mal', 'Revisa la conexión!');
-        }, 2000);
+        }, 1000);
         return of([])
       })
     );
