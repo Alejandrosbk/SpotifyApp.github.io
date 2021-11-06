@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '@modules/auth/services/auth.service';
+import { CookieService } from 'ngx-cookie-service';
 import { ToastrService } from 'ngx-toastr';
 
 @Component({
@@ -14,7 +15,7 @@ export class AuthPageComponent implements OnInit {
   errorSession: boolean = false
   formLogin: FormGroup = new FormGroup({});
 
-  constructor( private router: Router, private authService: AuthService, private toastr: ToastrService ) { }
+  constructor( private router: Router, private authService: AuthService, private toastr: ToastrService, private cookie: CookieService ) { }
 
   // HACEMOS LAS VALIDACIONES DE LOS INPUTS
   ngOnInit(): void {
@@ -33,10 +34,13 @@ export class AuthPageComponent implements OnInit {
     // NOS SUSCRIBIMOS AL OBSERVABLE PARA PODER USARLO
     this.authService.sendCredentials(email, password)
     .subscribe(response => { //TODO:CUANDO EL USUARIO INGRESA CREDENCIALES CORRECTAS 200-400  
-      console.log('sesion iniciada ok');
+      console.log('sesion iniciada ok', response);
+      const { tokenSession, data } = response;
+      this.cookie.set('token', tokenSession, 4, '/');
       setTimeout(() => {
         this.toastr.success('Sesión Completada', 'Has iniciado sesión!');
       }, 500);
+      this.router.navigate(['/', 'songs']);
     },err => {  //TODO: CUANDO LAS CREDENCIALES SON INCORRECTAS 400>
       console.log('error de sesion, revisa tus credenciales!');
       setTimeout(() => {

@@ -1,4 +1,5 @@
-import { HttpClientModule } from '@angular/common/http';
+import { InjectSessionInterceptor } from '@core/interceptors/inject-session.interceptor';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -17,11 +18,16 @@ import { CookieService } from 'ngx-cookie-service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(), // ToastrModule added
+    BrowserAnimationsModule, 
+    ToastrModule.forRoot(), 
   ],
   providers: [
-    CookieService
+    CookieService,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: InjectSessionInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })
