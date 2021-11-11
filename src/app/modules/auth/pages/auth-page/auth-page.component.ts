@@ -22,7 +22,7 @@ export class AuthPageComponent implements OnInit {
     this.formLogin = new FormGroup(
       {
         email: new FormControl('', [Validators.required, Validators.email, Validators.pattern(/[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+/)]),
-        password: new FormControl('', [Validators.required, Validators.minLength(6), Validators.maxLength(12)])
+        password: new FormControl('', [Validators.required, Validators.minLength(3), Validators.maxLength(12)])
       }
     )
   }
