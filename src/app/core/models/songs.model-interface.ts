@@ -7,5 +7,5 @@ export interface SongsModel {
   cover?: string;
   artist?: ArtistModel;
   duration?: number;
-  url?: string;
+  url?: any;
 }

@@ -8,9 +8,9 @@ import { MultimediaService } from '@shared/services/multimedia.service';
   styleUrls: ['./card-player.component.css']
 })
 export class CardPlayerComponent implements OnInit {
-    // Definimos las condiciones y la estructura de los datos que se cargaran en el componente
-    @Input() mode: 'small' | 'big' = 'big'
-    @Input() track: SongsModel = { _id: 0, name: '', album: '', url: '', cover: '' };
+  // Definimos las condiciones y la estructura de los datos que se cargaran en el componente
+  @Input() mode: 'small' | 'big' = 'big'
+  @Input() track: SongsModel = { _id: 0, name: '', album: '', url: '', cover: '' };
 
   constructor( private multimediaService: MultimediaService ) { }
 
@@ -19,8 +19,6 @@ export class CardPlayerComponent implements OnInit {
 
   // EVENTO PARA ENVIAR EL PLAY 
   sendPlay(track:SongsModel): void {
-    this.multimediaService.calback.emit(track);
-    console.log('enviando cancion al reproductor', track);
-    
+    this.multimediaService.trackInfo$.next(track)
   }
 }
