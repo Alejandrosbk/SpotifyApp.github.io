@@ -11,10 +11,10 @@ export class MultimediaService {
   // TODO: VARIABLES PARA EL REPRODUCTOR
   public trackInfo$: BehaviorSubject<any> = new BehaviorSubject(undefined);   // OBJETO QUE CONTIENE LA CANCION PARA PREODUCIR
   public audio!: HTMLAudioElement;   // REPRODUCTOR
-  public timeElapsed$: BehaviorSubject<string> = new BehaviorSubject('00:00')
-  public timeRemaining$: BehaviorSubject<string> = new BehaviorSubject('-00:00')
-  public playerStatus$: BehaviorSubject<string> = new BehaviorSubject('paused')
-  public playerPercentage$: BehaviorSubject<number> = new BehaviorSubject(0)
+  public timeElapsed$: BehaviorSubject<string> = new BehaviorSubject('00:00');
+  public timeRemaining$: BehaviorSubject<string> = new BehaviorSubject('-00:00');
+  public playerStatus$: BehaviorSubject<string> = new BehaviorSubject('paused');
+  public playerPercentage$: BehaviorSubject<number> = new BehaviorSubject(0);
 
   constructor() { 
     this.audio = new Audio();
