@@ -1,10 +1,10 @@
 .side-bar {
-    width: 15.5rem;
+    width: 15rem;
     height: 100vh;
     position: fixed;
     top: 0;
     left: 0;
-    padding: .5rem 1rem;
+    padding: 1rem 1rem;
 }
 
 .side-bar__list {
@@ -46,4 +46,12 @@
 
 .side-bar__list li {
     cursor: pointer;
+}
+
+.brand {
+    height: 40px;
+    max-width: 131px;
+    width: 100%;
+    object-fit: cover;
+    padding: 16px 0 16px 0;
 }

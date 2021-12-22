@@ -25,7 +25,7 @@ export class PlaylistBodyComponent implements OnInit {
       property,
       order: order === 'asc' ? 'desc' : 'asc'
     }
-    // console.log(this.optionSort);
+    // console.log(this.optionSort); TODO: log de orden desc o asc
   }
 
 }

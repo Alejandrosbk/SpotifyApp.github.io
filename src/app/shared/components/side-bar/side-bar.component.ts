@@ -30,7 +30,7 @@ export class SideBarComponent implements OnInit {
       {
         name: 'Tu biblioteca',
         icon: 'uil uil-chart',
-        router: ['/', 'favorites']
+        router: ['/', 'songs']
       }
     ]
 
@@ -41,25 +41,26 @@ export class SideBarComponent implements OnInit {
       },
       {
         name: 'Canciones que te gustan',
-        icon: 'uil-heart-medical'
+        icon: 'uil-heart-medical',
+        router: ['/', 'favorites']
       }
     ]
 
     this.customOptions = [
       {
-        name: 'Mi lista º1',
+        name: 'Tus canciones favoritas en 2021',
         router: ['/']
       },
       {
-        name: 'Mi lista º2',
+        name: 'Tus canciones favoritas en 2020',
         router: ['/']
       },
       {
-        name: 'Mi lista º3',
+        name: 'Tus canciones favoritas en 2019',
         router: ['/']
       },
       {
-        name: 'Mi lista º4',
+        name: 'Tus canciones favoritas en 2018',
         router: ['/']
       }
     ]

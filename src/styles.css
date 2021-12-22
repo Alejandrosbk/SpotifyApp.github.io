@@ -1,3 +1,5 @@
+/* Website Branding */
+
 :root {
     --color-1: #1DB954;
     --color-2: #323232;
@@ -34,6 +36,21 @@ button {
 
 button:disabled {
     opacity: .5;
+}
+
+.fadeIn {
+    animation: fadeInAnimation ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 

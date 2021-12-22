@@ -18,7 +18,7 @@ export class HistoryPageComponent implements OnInit {
 
   receiveData(event: string): void {
     //TODO: SE AGREGA EL TERMINO Y HACE LA PETICION CUANDO SEAN MAS DE TRES CARACTERES
-    console.log('evento en el padre', event);
+    // console.log('evento en el padre', event);
     this.listResults$ = this.searchService.searchTracks$(event)
   }
 
