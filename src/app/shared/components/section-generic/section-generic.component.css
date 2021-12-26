@@ -4,12 +4,10 @@
 
 .section--generic__player--zone .player--list {
     display: grid;
-    grid-auto-rows: min-content;
-    grid-auto-flow: row;
-    list-style: none;
+    grid-gap: 1rem;
     margin: 0;
     padding: 0;
-    gap: 1rem;
+    list-style: none;
 }
 
 .section--generic__player--zone .player--list.card-small {
@@ -18,4 +16,40 @@
 
 .section--generic__player--zone .player--list.card-big {
     grid-template-columns: repeat(6, minmax(100px, 1fr));
+}
+
+@media (max-width: 1600px) {
+    .section--generic__player--zone .player--list.card-big {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    .section--generic__player--zone .player--list.card-small {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1270px) {
+    .section--generic__player--zone .player--list.card-big {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .section--generic__player--zone .player--list.card-small {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 1100px) {
+    .section--generic__player--zone .player--list.card-big {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .section--generic__player--zone .player--list.card-small {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 816px) {
+    .section--generic__player--zone .player--list.card-big {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section--generic__player--zone .player--list.card-small {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }

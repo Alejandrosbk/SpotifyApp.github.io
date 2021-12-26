@@ -1,11 +1,22 @@
 .card-player {
-    background-color: var(--color-2);
+    background-color: #282828;
     height: 5rem;
     border-radius: var(--border-radius-1);
     display: flex;
     cursor: pointer;
     transition: all ease var(--animation-1);
-    justify-content: space-between;
+    justify-content: stretch;
+}
+
+.card-player.player-small {
+    background-color: rgba(255, 255, 255, .1);
+    border-radius: 4px;
+    -webkit-transition: .3s ease;
+    transition: .3s ease;
+}
+
+.card-player.player-small:hover {
+    background-color: rgba(255, 255, 255, 0.26);
 }
 
 .card-player:hover {
@@ -25,6 +36,7 @@
     display: flex;
     align-items: center;
     align-content: center;
+    text-align: left;
     padding: 0 0 0 .75rem;
 }
 
@@ -61,7 +73,7 @@
 
 .card-player.player-big .cover {
     width: 100%;
-    height: 200px;
+    max-height: 200px;
     border-radius: var(--border-radius-1);
 }
 
@@ -80,5 +92,5 @@
 .card-player.player-big .buttons-player {
     position: absolute;
     right: 0;
-    top: 13rem
+    bottom: 2rem;
 }
