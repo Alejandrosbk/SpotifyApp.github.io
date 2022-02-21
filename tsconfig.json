@@ -15,7 +15,7 @@
         "src/app/shared/*"
       ]
     },
-    "outDir": "./dist/out-tsc",
+    "outDir": "docs/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
     "noImplicitReturns": true,
